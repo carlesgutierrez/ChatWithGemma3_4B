@@ -32,9 +32,47 @@ En el archivo `robot.js` se definen las lógicas que dan vida a los brazos y par
     *   Se actualizan en cada frame y se "re-generan" (respawn) cuando su vida llega a cero, creando un bucle infinito de energía cian y púrpura.
 *   **`drawHead()` y `eyeBlink`**: La cabeza incluye una lógica de parpadeo aleatorio (`blinkTimer`) y pupilas que siguen un movimiento errático cuando GEMA está "concentrada".
 
+## 🛠️ Cómo se construyó (Evolución)
+
+Este proyecto nació de una idea simple: **¿Cómo puedo hablar con una IA profesional desde mi propia web sin pagar suscripciones?**
+
+### Paso 1: La Demo Básica
+Primero, le pedí a un LLM que creara una demo mínima para probar la conexión con LM Studio. Este fue el código inicial:
+
+```html
+<!-- Ejemplo de la base tecnológica inicial -->
+<script>
+    async function enviar() {
+        const response = await fetch("http://localhost:1234/v1/chat/completions", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                messages: [{ role: "user", content: pregunta }],
+                temperature: 0.7
+            })
+        });
+        const data = await response.json();
+        resDiv.innerText = data.choices[0].message.content;
+    }
+</script>
+```
+
+### Paso 2: Personalización y "System Prompt"
+Una vez que la conexión funcionaba, el reto era convertir una IA genérica en **GEMA**, una coach experta. Esto se logra mediante el **System Prompt** que se encuentra en el archivo `config.txt`.
+
+#### ¿Cómo definimos su comportamiento?
+En `config.txt` hemos programado las "reglas de oro" de GEMA:
+1.  **Identidad**: Se presenta como una asistente mindfulness para artistas.
+2.  **Redirección de Distracciones**: Si el usuario menciona series, películas o redes sociales, GEMA está instruida para:
+    *   Reconocer el deseo del usuario (empatía).
+    *   Redirigir suavemente hacia la tarea artística ("¿Y si avanzamos 15 minutos antes de ese descanso?").
+3.  **Técnicas incorporadas**: Tiene permiso para sugerir técnicas Pomodoro, visualizaciones o ejercicios de respiración rápidos.
+
+Este archivo `config.txt` se carga dinámicamente al iniciar la web (`app.js`), permitiendo que el modelo **Gemma 3** sepa exactamente qué papel debe jugar sin necesidad de re-programar nada.
+
 ---
 
-## 🛠️ Requisitos Previos
+## 🚀 Requisitos Previos (LM Studio)
 
 Para poner en marcha este proyecto, necesitas preparar tu entorno local siguiendo estos pasos:
 
