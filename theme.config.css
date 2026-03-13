@@ -1,0 +1,30 @@
+/* theme.config.css — Configuración de colores y contrastes generales */
+
+:root {
+  /* Fondos - Elevamos ligeramente el brillo para definir mejor las zonas */
+  --bg-primary: #050508;
+  --bg-secondary: #10101f;
+  --bg-panel: #14142b;
+  --bg-input: #1a1a35;
+
+  /* Colores Neón - Mismos tonos pero con mayor saturación */
+  --neon-cyan: #00f5ff;
+  --neon-purple: #bf5fff;
+  --neon-green: #39ff14;
+  --neon-pink: #ff2d78;
+  --neon-gold: #ffd700;
+
+  /* Texto - Buscamos máximo contraste sobre fondo oscuro */
+  --text-primary: #ffffff;      /* Texto principal en blanco puro */
+  --text-dim: #94a3b8;          /* Texto secundari/labels mucho más claros */
+  --text-mono: #00ffcc;         /* Verde cian para inputs y códigos */
+
+  /* Bordes y Glows - Aumentamos la opacidad para que se "vean" */
+  --border-glow: rgba(0, 245, 255, 0.35);
+  --border-active: rgba(0, 245, 255, 0.7);
+  --border-purple: rgba(191, 95, 255, 0.5);
+
+  /* Scrollbars */
+  --scrollbar-thumb: #2d2d5a;
+  --scrollbar-track: #0a0a1a;
+}
