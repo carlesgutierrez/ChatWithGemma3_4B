@@ -11,6 +11,27 @@ Su misión principal es:
 - **Evitar distracciones:** Detectar cuando el usuario intenta evadirse hablando de redes sociales, series o películas, y redirigirlo amablemente hacia su trabajo artístico.
 - **Ejemplo didáctico:** Mostrar cómo integrar un LLM local en una aplicación web sencilla (HTML/JS/CSS) de forma rápida y efectiva.
 
+![Interfaz de GEMA](interface_preview.png)
+
+---
+
+## 🎨 Animaciones con p5.js (Núcleo GEMA)
+
+La parte visual central del proyecto está desarrollada con la librería **p5.js**. No son simples vídeos, sino un sistema de animación procedimental que reacciona al estado de la IA.
+
+### Funciones Principales de Animación
+
+En el archivo `robot.js` se definen las lógicas que dan vida a los brazos y partículas de GEMA:
+
+*   **`drawArms(p, t, thinkT, isThinking)`**: Esta función calcula la posición de los brazos. 
+    *   Usa cinemática inversa simplificada y ángulos de rotación (`upperArmAngle`, `forearmAngle`).
+    *   **En reposo (Idle)**: Los brazos se mueven suavemente usando `Math.sin(t)` para simular una "respiración".
+    *   **Pensando (Thinking)**: Los ángulos cambian mediante un `lerp` (interpolación lineal) para elevar los brazos hacia la cabeza, añadiendo un pequeño temblor aleatorio.
+*   **`drawThinkingParticles(p)`**: Gestiona el sistema de partículas que emanan de la cabeza cuando la IA procesa una respuesta.
+    *   Cada partícula tiene propiedades de velocidad (`vx`, `vy`), vida (`life`) y color.
+    *   Se actualizan en cada frame y se "re-generan" (respawn) cuando su vida llega a cero, creando un bucle infinito de energía cian y púrpura.
+*   **`drawHead()` y `eyeBlink`**: La cabeza incluye una lógica de parpadeo aleatorio (`blinkTimer`) y pupilas que siguen un movimiento errático cuando GEMA está "concentrada".
+
 ---
 
 ## 🛠️ Requisitos Previos
