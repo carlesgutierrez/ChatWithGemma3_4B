@@ -15,9 +15,12 @@
   --neon-gold: #ffd700;
 
   /* Texto - Buscamos máximo contraste sobre fondo oscuro */
-  --text-primary: #ffffff;      /* Texto principal en blanco puro */
-  --text-dim: #94a3b8;          /* Texto secundari/labels mucho más claros */
-  --text-mono: #00ffcc;         /* Verde cian para inputs y códigos */
+  --text-primary: #ffffff;
+  /* Texto principal en blanco puro */
+  --text-dim: #94a3b8;
+  /* Texto secundari/labels mucho más claros */
+  --text-mono: #00ffcc;
+  /* Verde cian para inputs y códigos */
 
   /* Bordes y Glows - Aumentamos la opacidad para que se "vean" */
   --border-glow: rgba(0, 245, 255, 0.35);
@@ -27,4 +30,10 @@
   /* Scrollbars */
   --scrollbar-thumb: #2d2d5a;
   --scrollbar-track: #0a0a1a;
+
+  /* Tipografía - Ajusta estos valores para cambiar el tamaño global */
+  --font-size-msg: 1.0rem;
+  /* Tamaño de los mensajes del chat */
+  --font-size-terminal: 1.0rem;
+  /* Tamaño del input y estados */
 }

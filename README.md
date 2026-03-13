@@ -11,7 +11,31 @@ Su misión principal es:
 - **Evitar distracciones:** Detectar cuando el usuario intenta evadirse hablando de redes sociales, series o películas, y redirigirlo amablemente hacia su trabajo artístico.
 - **Ejemplo didáctico:** Mostrar cómo integrar un LLM local en una aplicación web sencilla (HTML/JS/CSS) de forma rápida y efectiva.
 
-![Interfaz de GEMA](interface_preview.png)
+![Interfaz de GEMA](interface_preview.jpg)
+
+---
+
+## 🎨 Personalización y Estilo (CSS)
+
+El proyecto utiliza un sistema de diseño basado en variables de CSS para permitir una personalización rápida y un alto contraste.
+
+### Configuración de Temas (`theme.config.css`)
+
+Hemos separado las variables de estilo en un archivo independiente para que sea más fácil modificar la apariencia general (colores, brillos y contrastes) sin tocar la lógica del diseño:
+
+```css
+:root {
+  --bg-primary: #050508;
+  --bg-panel: #14142b;
+  --text-primary: #ffffff; /* Blanco puro para máximo contraste */
+  --neon-cyan: #00f5ff;    /* Color de identidad GEMA */
+  
+  /* Ajuste de Tipografía */
+  --font-size-msg: 0.95rem; /* Incrementa este valor para ver el texto más grande */
+}
+```
+
+Esto permite cambiar GEMA de un "Modo Cyberpunk" a cualquier otro estilo visual simplemente editando estos tokens.
 
 ---
 
