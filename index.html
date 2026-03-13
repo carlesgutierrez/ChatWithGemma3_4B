@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GEMA · Asistente Coach Artístico</title>
+  <meta name="description" content="GEMA - Tu asistente coach mindfulness para proyectos artísticos, potenciada por Gemma 3 vía LMStudio." />
+  <link rel="stylesheet" href="style.css" />
+  <!-- p5.js from CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.4/p5.min.js"></script>
+</head>
+<body>
+
+  <!-- ══════════ HEADER ══════════ -->
+  <header id="app-header">
+    <div class="header-gem"></div>
+    <div>
+      <h1>G.E.M.A.</h1>
+      <div class="subtitle">Guía · Energía · Mindfulness · Arte</div>
+    </div>
+    <div class="header-gem"></div>
+  </header>
+
+  <!-- ══════════ MAIN GRID ══════════ -->
+  <main id="app-main">
+
+    <!-- ── Left: User Questions ── -->
+    <div class="panel" id="left-panel">
+      <div class="panel-header">
+        <span class="dot"></span>
+        USER INPUT LOG
+      </div>
+      <div class="messages-container" id="user-messages">
+        <div class="empty-state" id="user-empty">
+          <div class="icon">⌨</div>
+          <div>TUS PREGUNTAS<br>APARECERÁN AQUÍ</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Center: Robot ── -->
+    <div class="panel" id="robot-panel">
+      <div class="panel-header" style="justify-content: center;">
+        <span class="dot purple"></span>
+        NÚCLEO GEMA
+        <span class="dot purple"></span>
+      </div>
+      <div id="robot-canvas-container"></div>
+      <div class="robot-status" id="robot-status">INICIANDO SISTEMA...</div>
+    </div>
+
+    <!-- ── Right: Bot Responses ── -->
+    <div class="panel" id="right-panel">
+      <div class="panel-header" style="flex-direction: row-reverse;">
+        <span class="dot red"></span>
+        GEMA OUTPUT
+      </div>
+      <div class="messages-container" id="bot-messages">
+        <div class="empty-state" id="bot-empty">
+          <div class="icon">◆</div>
+          <div>LAS RESPUESTAS DE<br>GEMA APARECERÁN AQUÍ</div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ══════════ INPUT BAR ══════════ -->
+  <footer id="input-bar">
+    <span class="input-prefix">›</span>
+    <input
+      type="text"
+      id="user-input"
+      placeholder="Escribe tu mensaje... (Enter para enviar)"
+      autocomplete="off"
+      spellcheck="false"
+    />
+    <button id="send-btn">ENVIAR</button>
+  </footer>
+
+  <!-- Scripts: p5 first, then robot sketch, then app logic -->
+  <script src="robot.js"></script>
+  <script src="app.js"></script>
+
+</body>
+</html>
