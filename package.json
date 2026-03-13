@@ -1,0 +1,20 @@
+{
+  "name": "chat-with-gemma3-4b",
+  "version": "1.0.0",
+  "description": "GEMA: Tu Asistente de Enfoque Artístico usando LMStudio y Gemma 3",
+  "main": "app.js",
+  "scripts": {
+    "start": "npx serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gemma",
+    "lmstudio",
+    "ai",
+    "local-llm",
+    "mindfulness",
+    "artist-helper"
+  ],
+  "author": "Carles Gutiérrez",
+  "license": "MIT"
+}
